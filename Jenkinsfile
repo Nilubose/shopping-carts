@@ -26,12 +26,13 @@ pipeline {
         sh 'mvn package'
       }
     }
-  stage('archive') {
+ 
+ stage('archive') {
       steps {
         archiveArtifacts '**/target/*.jar'
       }
   }
-
+}
   post {
     always {
       echo 'this pipeline has completed...'
